@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2023_05_15_022859) do
     t.string "name"
     t.string "symbol"
     t.float "market_cap_usd"
-    t.float "price_usd"
+    t.float "price_usd"``
     t.float "change_percent_24hr"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

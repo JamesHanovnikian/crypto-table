@@ -1,5 +1,4 @@
 class CurrenciesController < ApplicationController
-
   def index
     currencies = Currency.all
     render json: currencies.as_json
