@@ -1,6 +1,7 @@
 class CurrenciesController < ApplicationController
   def index
     currencies = Currency.all
+    @direction = true
     render json: currencies.as_json
   end
 
@@ -14,5 +15,20 @@ class CurrenciesController < ApplicationController
     )
     currency.save
     render json: currency.as_json
+  end
+
+  def by_price
+    currencies = Currency.all
+    column = params[:column]
+    direction = params[:direction]
+    p column
+    if direction == true
+      x = column + " " + "ASC"
+      currencies.order!(x)
+    else
+      x = column + " " + "DESC"
+      currencies.order!(x)
+    end
+    render json: currencies.as_json
   end
 end
