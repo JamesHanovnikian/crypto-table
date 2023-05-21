@@ -1,7 +1,6 @@
 class CurrenciesController < ApplicationController
   def index
     currencies = Currency.all
-    @direction = true
     render json: currencies.as_json
   end
 
@@ -13,22 +12,10 @@ class CurrenciesController < ApplicationController
       price_usd: params[:price_usd],
       change_percent_24hr: params[:change_percent_24hr],
     )
-    currency.save
-    render json: currency.as_json
-  end
-
-  def by_price
-    currencies = Currency.all
-    column = params[:column]
-    direction = params[:direction]
-    p column
-    if direction == true
-      x = column + " " + "ASC"
-      currencies.order!(x)
+    if currency.save
+      render json: currency.as_json
     else
-      x = column + " " + "DESC"
-      currencies.order!(x)
+      render json: { message: "Did not save currency properly." }, status: :unprocessable_entity
     end
-    render json: currencies.as_json
   end
 end
