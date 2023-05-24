@@ -7,12 +7,12 @@ Crypto table is a simple web page that utilizes data from the Coincap API ([link
 
 ## Technologies 
 
-ruby 3.0.1
-Rails 6.1.7.3
-PostgreSQL
-Active Record 
+- ruby 3.0.1
+- Rails 6.1.7.3
+- PostgreSQL
+- Active Record 
 
 ## Setup 
 
-Install Ruby using homebrew using `brew install ruby`
-Install Rails using `gem install rails` command. 
+- Install Ruby using homebrew using `brew install ruby`
+- Install Rails using `gem install rails` command. 
