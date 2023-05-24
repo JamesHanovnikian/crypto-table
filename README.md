@@ -1,6 +1,10 @@
 # README
 
+# Crypto Table 
+
 ## Description 
+
+Crypto table is a simple web app that 
 
 Things you may want to cover:
 
